@@ -1,0 +1,65 @@
+<ion-header  lang=”pt-br” color='primary' [translucent]="true">
+  <ion-toolbar color='primary'>
+    <ion-title>
+      Cadastrar Registro
+    </ion-title>
+    <ion-button class=sair (click) = "sair()">
+            Sair
+          </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+  <div class="registration">
+    <h2>Bem vindo {{ user }}</h2>
+    <br>
+    <ion-label *ngIf="registro.length === 0">
+      <h2>Não há nenhum registro</h2>
+      <br>
+      <span>Para cadastrar um novo registro</span>
+      <br><br>
+      <span>Preencha os campos abaixo</span>
+    </ion-label>
+        <ion-card *ngFor="let item of registro">
+            <ion-label> Identificação do colaborador: {{ item.id }}  </ion-label><br>
+            <ion-label> Data do registro: {{ item.data | date: 'dd/MM/y' }}  </ion-label><br>
+            <ion-label> Mês contábil: {{ item.mes }}  </ion-label><br>
+            <ion-label> Justificativa: {{ item.justif }}  </ion-label><br>
+            <ion-label> Status: {{ item.status }}  </ion-label><br>
+      </ion-card>
+
+    <div class="registration-form" >
+      <p>
+        <ion-label class="mes-field">
+          <ion-input
+            placeholder="Mês contábil"
+            Name="text"
+            [(ngModel)] = "mes">
+          </ion-input>
+        </ion-label>
+      </p>
+      <p>
+        <ion-label class="justifica-field">
+          <ion-input
+            placeholder="Descrição geral das contas"
+            Name="long-text"
+            [(ngModel)] = "justif">
+          </ion-input>
+        </ion-label>
+      </p>
+
+        <ion-button *ngIf="registro.length === 0"
+          (click)= 'cadastrar(mes, justif)'
+        >
+          Cadastrar
+        </ion-button>
+        <ion-button *ngIf="registro.length > 0"
+          (click)= 'cadastrar(mes, justif)'
+        >
+          Alterar
+        </ion-button>
+    </div>
+  </div>
+</ion-card>
+</ion-content>

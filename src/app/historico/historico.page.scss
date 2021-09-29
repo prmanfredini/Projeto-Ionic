@@ -1,0 +1,15 @@
+.historico {
+  text-align: center;
+  margin: 8px;
+  &-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+}
+
+.sair {
+  position:fixed;
+   right:10px;
+   top:5px;
+}

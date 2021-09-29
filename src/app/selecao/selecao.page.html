@@ -1,0 +1,42 @@
+<ion-header  lang=”pt-br” color='primary' [translucent]="true">
+  <ion-toolbar color='primary'>
+    <ion-title>
+      Dados para Revisão
+    </ion-title>
+    <ion-button class=sair (click) = "sair()">
+            Sair
+          </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="Checkin">
+    <div >
+      <h2 >Bem vindo {{ user }}</h2>
+    </div>
+
+    <div>
+      <ion-card>
+        <span>Dados</span>
+        <br>
+        <br>
+        <ion-label *ngIf="registro === null">Nenhum registro encontrado</ion-label>
+        <ion-card *ngFor="let item of registro">
+
+          <ion-label> Identificação do colaborador: {{ item.id }}  </ion-label><br>
+          <ion-label> Data do registro: {{ item.data | date: 'dd/MM/y' }}  </ion-label><br>
+          <ion-label> Mês contábil: {{ item.mes }}  </ion-label><br>
+          <ion-label> Justificativa: {{ item.justif }}  </ion-label><br>
+          <ion-label> Status: {{ item.status }}  </ion-label><br>
+
+          <ion-button (click) = "aprovado()">Aprovar</ion-button>
+            <ion-button (click) = "refazer()">Refazer</ion-button>
+      </ion-card>
+
+      </ion-card>
+        <br>
+        <br>
+    </div>
+
+  </ion-card>
+</ion-content>
