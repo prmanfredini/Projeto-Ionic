@@ -21,12 +21,12 @@
       <br><br>
       <span>Preencha os campos abaixo</span>
     </ion-label>
-        <ion-card *ngFor="let item of registro">
-            <ion-label> Identificação do colaborador: {{ item.id }}  </ion-label><br>
-            <ion-label> Data do registro: {{ item.data | date: 'dd/MM/y' }}  </ion-label><br>
-            <ion-label> Mês contábil: {{ item.mes }}  </ion-label><br>
-            <ion-label> Justificativa: {{ item.justif }}  </ion-label><br>
-            <ion-label> Status: {{ item.status }}  </ion-label><br>
+      <ion-card *ngFor="let item of registro">
+        <ion-label> Identificação do colaborador: {{ item.id }}  </ion-label><br>
+          <ion-label> Data do registro: {{ item.data | date: 'dd/MM/y' }}  </ion-label><br>
+          <ion-label> Mês contábil: {{ item.mes }}  </ion-label><br>
+          <ion-label> Justificativa: {{ item.justif }}  </ion-label><br>
+          <ion-label> Status: {{ item.status }}  </ion-label><br>
       </ion-card>
 
     <div class="registration-form" >
